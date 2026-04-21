@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhusri Makeover Artistry | Luxury Bridal & Fashion Makeup Salem</title>
+    <meta name="description" content="Premium beauty makeover services in Salem. Bridal makeup and high-fashion transformations at Madhusri Makeover Artistry.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container">
+            <a href="#" class="logo">Madhusri <span>Artistry</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://wa.me/917871150337?text=Hi%20Madhusri,%20I%20want%20to%20book%20a%20luxury%20makeover!" class="btn btn-primary">Book Now</a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <span class="reveal-text">Where Art Meets Elegance</span>
+            <h1 class="hero-title">Redefining <span>Beauty</span> <br> Through Artistry</h1>
+            <p class="hero-desc">Experience the pinnacle of luxury makeup and bridal styling in Salem. Perfected by Madhusri.</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn btn-purple">View Portfolio</a>
+                <a href="https://wa.me/917871150337?text=Hi%20Madhusri,%20I%20want%20to%20contact%20you%20for%20a%20makeover!" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- Before & After Portfolio -->
+    <section id="portfolio" class="portfolio-section section-padding">
+        <div class="container">
+            <div class="section-header center">
+                <span class="subtitle">The Transformation</span>
+                <h2>Before & <span>After</span></h2>
+            </div>
+            
+            <div class="slider-wrapper">
+                <div class="comparison-slider">
+                    <!-- The "After" image -->
+                    <div class="image-after" style="background-image: url('C:/Users/ELCOT/.gemini/antigravity/brain/71aead63-9fc6-495a-8023-7d953fd40aa5/after_makeup_professional_1776786238414.png');"></div>
+                    <!-- The "Before" image (clipped) -->
+                    <div class="image-before" style="background-image: url('C:/Users/ELCOT/.gemini/antigravity/brain/71aead63-9fc6-495a-8023-7d953fd40aa5/before_makeup_plain_1776786169891.png');"></div>
+                    <!-- Handle -->
+                    <input type="range" min="0" max="100" value="50" class="slider-handle" id="slider-handle">
+                    <div class="slider-button">
+                        <i class="fa-solid fa-arrows-left-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Services -->
+    <section id="services" class="services-section section-padding">
+        <div class="container">
+            <div class="section-header center">
+                <span class="subtitle">Our Expertise</span>
+                <h2>Premium <span>Services</span></h2>
+                <p class="tap-hint">Tap a service to explore details</p>
+            </div>
+            
+            <div class="services-grid-square">
+                <!-- Hair Care -->
+                <div class="service-card-square" onclick="this.classList.toggle('active')">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&q=80&w=800" alt="Hair Care" class="service-square-img">
+                    </div>
+                    <div class="card-content-overlay">
+                        <h3>Hair Care & Styling</h3>
+                        <ul class="service-list-square">
+                            <li><strong>Cutting & Styling:</strong> Precision haircuts, blowouts, layering.</li>
+                            <li><strong>Coloring:</strong> Global color, highlights, balayage.</li>
+                            <li><strong>Texture:</strong> Straightening, smoothening, keratin.</li>
+                            <li><strong>Maintenance:</strong> Hair spa, deep conditioning.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Skin & Face -->
+                <div class="service-card-square" onclick="this.classList.toggle('active')">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800" alt="Skin Care" class="service-square-img">
+                    </div>
+                    <div class="card-content-overlay">
+                        <h3>Skin & Face</h3>
+                        <ul class="service-list-square">
+                            <li><strong>Facials:</strong> Gold/Diamond, Anti-aging, O3+.</li>
+                            <li><strong>Cleanups:</strong> Quick refreshment for skin.</li>
+                            <li><strong>Hair Removal:</strong> Threading and specialized waxing.</li>
+                            <li><strong>Detan & Bleach:</strong> Purifying masks and tan removal.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Nail & Body -->
+                <div class="service-card-square" onclick="this.classList.toggle('active')">
+                    <div class="card-image-wrapper">
+                        <img src="https://media.istockphoto.com/id/2263341159/photo/manicure-process-in-the-nail-salon.jpg?s=612x612&w=0&k=20&c=OrUQnL-9lfaMbm4CIIAgphAIUr4aYM9bSFhTXOZsiWU=" alt="Nail Care" class="service-square-img">
+                    </div>
+                    <div class="card-content-overlay">
+                        <h3>Nail & Body</h3>
+                        <ul class="service-list-square">
+                            <li><strong>Mani-Pedi:</strong> Luxury Spa (Ice Cream/Candy Crush).</li>
+                            <li><strong>Nail Art:</strong> Gel polish and acrylic extensions.</li>
+                            <li><strong>Body Rituals:</strong> Polishing, scrubs, and massages.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bridal -->
+                <div class="service-card-square" onclick="this.classList.toggle('active')">
+                    <div class="card-image-wrapper">
+                        <img src="https://media.istockphoto.com/id/2187544756/photo/beautiful-stunning-indian-bride-in-traditional-bridal-red-lehenga-with-heavy-jewelry.jpg?s=612x612&w=0&k=20&c=Vd9QRbd5CmL7ZpfdrPxLRO0RC9mkgoTtl_V6R_Ra7rk=" alt="Bridal Care" class="service-square-img">
+                    </div>
+                    <div class="card-content-overlay">
+                        <h3>Bridal & Special</h3>
+                        <ul class="service-list-square">
+                            <li><strong>Makeup:</strong> HD or Airbrush Bridal makeup.</li>
+                            <li><strong>Styling:</strong> Saree draping and bridal hairstyling.</li>
+                            <li><strong>Pre-Bridal:</strong> Customised glow-up sessions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button (Left Side, Icon Only) -->
+    <a href="https://wa.me/917871150337?text=Hi%20Madhusri,%20I%20want%20to%20book%20a%20luxury%20makeover!" class="whatsapp-float-left" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer / Local SEO Section -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="#" class="logo">Madhusri <span>Artistry</span></a>
+                    <p class="footer-desc">Crafting timeless beauty for the modern woman. Based in the heart of Salem, serving elegance across Tamil Nadu.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/MADHUSRI_MAKEOVER_ARTISTRY" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Find Us in Salem</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Madhuraisami Pillai Nagar,<br>Sanniyasigundu, Salem - 637015</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 78711 50337</p>
+                    <p><i class="fa-solid fa-envelope"></i> hello@madhusrimakeover.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Madhusri Makeover Artistry. Designed with Luxury.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
