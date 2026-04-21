@@ -1,0 +1,100 @@
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navAnchors = navLinks.querySelectorAll('a');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+    }
+
+    // Close menu when a link is clicked
+    navAnchors.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-xmark');
+        });
+    });
+
+    // 2. Before & After Slider Logic
+    const sliderHandle = document.getElementById('slider-handle');
+    const imageBefore = document.querySelector('.image-before');
+    const sliderButton = document.querySelector('.slider-button');
+
+    if (sliderHandle) {
+        sliderHandle.addEventListener('input', (e) => {
+            const sliderValue = e.target.value;
+            imageBefore.style.clipPath = `inset(0 ${100 - sliderValue}% 0 0)`;
+            sliderButton.style.left = `${sliderValue}%`;
+        });
+    }
+
+    // 3. Accordion Toggle Logic
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            
+            // Close other items
+            document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+
+    // 4. Reveal on Scroll Animation
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.section-header, .accordion-item, .comparison-slider').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        observer.observe(el);
+    });
+
+    // Handle scroll animations manually if needed
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('.section-header, .accordion-item, .comparison-slider').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.9) {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    // 5. Navigation Scroll Effect
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('.nav-bar');
+        if (window.scrollY > 50) {
+            nav.style.padding = '0.5rem 0';
+            nav.style.background = 'rgba(58, 0, 58, 0.98)';
+        } else {
+            nav.style.padding = '0.8rem 0';
+            nav.style.background = '#3A003A';
+        }
+    });
+});
