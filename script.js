@@ -33,15 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Before & After Slider Logic
     const sliderHandle = document.getElementById('slider-handle');
-    const imageBefore = document.querySelector('.image-before');
+    const beforeWrapper = document.getElementById('before-wrapper');
     const sliderButton = document.querySelector('.slider-button');
 
-    if (sliderHandle) {
+    if (sliderHandle && beforeWrapper) {
         sliderHandle.addEventListener('input', (e) => {
             const sliderValue = e.target.value;
-            const clipPathValue = `inset(0 ${100 - sliderValue}% 0 0)`;
-            imageBefore.style.clipPath = clipPathValue;
-            imageBefore.style.webkitClipPath = clipPathValue;
+            beforeWrapper.style.width = `${sliderValue}%`;
             sliderButton.style.left = `${sliderValue}%`;
         });
     }
