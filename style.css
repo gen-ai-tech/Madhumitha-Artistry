@@ -286,10 +286,12 @@ h2 span {
     height: 100%;
     background-size: cover;
     background-position: center;
+    z-index: 1;
 }
 
 .image-before {
     clip-path: inset(0 50% 0 0);
+    z-index: 2;
 }
 
 .slider-handle {
@@ -638,4 +640,9 @@ h2 span {
     .accordion-header { padding: 1rem; }
     .header-main { gap: 0.8rem; }
     .whatsapp-float-left { bottom: 1rem; left: 1rem; }
+    
+    .slider-wrapper {
+        aspect-ratio: 1/1;
+        margin-bottom: 2rem;
+    }
 }
