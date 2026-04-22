@@ -39,7 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sliderHandle) {
         sliderHandle.addEventListener('input', (e) => {
             const sliderValue = e.target.value;
-            imageBefore.style.clipPath = `inset(0 ${100 - sliderValue}% 0 0)`;
+            const clipPathValue = `inset(0 ${100 - sliderValue}% 0 0)`;
+            imageBefore.style.clipPath = clipPathValue;
+            imageBefore.style.webkitClipPath = clipPathValue;
             sliderButton.style.left = `${sliderValue}%`;
         });
     }
