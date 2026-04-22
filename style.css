@@ -266,7 +266,20 @@ h2 span {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16 / 9;
+    position: relative;
+}
+
+/* Fallback for browsers not supporting aspect-ratio */
+@supports not (aspect-ratio: 16/9) {
+    .slider-wrapper {
+        padding-top: 56.25%; /* 16:9 ratio */
+    }
+    .comparison-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
 
 .comparison-slider {
@@ -284,12 +297,20 @@ h2 span {
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .image-before {
     clip-path: inset(0 50% 0 0);
+    -webkit-clip-path: inset(0 50% 0 0);
+    z-index: 2;
+}
+
+.image-after {
+    z-index: 1;
 }
 
 .slider-handle {
