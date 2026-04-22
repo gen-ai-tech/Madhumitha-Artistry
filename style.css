@@ -291,12 +291,10 @@ h2 span {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.image-after, .image-before {
+.image-after, .image-before-img {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
     height: 100%;
     display: block;
@@ -304,17 +302,32 @@ h2 span {
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
-    /* Force hardware acceleration for mobile rendering */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    background-color: #f5f5f5; /* Fallback color */
 }
 
-.image-before {
-    clip-path: inset(0 50% 0 0);
-    -webkit-clip-path: inset(0 50% 0 0);
+/* Container for the 'Before' image that gets resized */
+.before-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Initial state */
+    height: 100%;
+    overflow: hidden;
     z-index: 2;
+    border-right: 2px solid var(--purple);
+}
+
+.image-before-img {
+    width: 900px; /* Match the max-width of .slider-wrapper */
+    max-width: none;
+    height: 100%;
+}
+
+/* Ensure the image inside the wrapper doesn't shrink when the wrapper does */
+@media (max-width: 900px) {
+    .image-before-img {
+        width: 100vw; 
+    }
 }
 
 .image-after {
