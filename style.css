@@ -97,12 +97,32 @@ h1, h2, h3, .logo {
     color: var(--accent);
 }
 
+.mobile-cta {
+    display: none;
+}
+
 /* Mobile Toggle */
 .menu-toggle {
     display: none;
     color: var(--white);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     cursor: pointer;
+    z-index: 1100;
+    transition: var(--transition);
+}
+
+/* Mobile Nav Overlay */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.nav-overlay.active {
+    display: block;
 }
 
 /* Hero Section */
@@ -182,6 +202,8 @@ h1, h2, h3, .logo {
     border: none;
     cursor: pointer;
     text-align: center;
+    width: auto;
+    white-space: nowrap;
 }
 
 .btn-purple {
@@ -558,20 +580,37 @@ h2 span {
     
     .nav-links {
         position: fixed;
-        top: 0;
+        top: 80px;
         right: -100%;
-        width: 70%;
-        height: 100vh;
+        width: 220px;
+        height: auto;
         background: var(--purple-dark);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        transition: 0.5s ease;
+        padding: 2rem 0;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1001;
     }
 
     .nav-links.active {
-        right: 0;
+        right: 20px;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .mobile-cta {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .mobile-cta .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.75rem;
     }
 
     .nav-cta { display: none; }
@@ -593,7 +632,7 @@ h2 span {
 @media (max-width: 480px) {
     .container { padding: 0 7%; }
     .hero-title { font-size: 2.2rem; }
-    .btn { width: 100%; }
+    .btn { width: auto; }
     .btn-outline { margin-left: 0; }
     .section-padding { padding: 4rem 0; }
     .accordion-header { padding: 1rem; }
