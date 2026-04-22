@@ -33,13 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Before & After Slider Logic
     const sliderHandle = document.getElementById('slider-handle');
-    const beforeWrapper = document.getElementById('before-wrapper');
+    const imageBefore = document.querySelector('.image-before');
     const sliderButton = document.querySelector('.slider-button');
 
-    if (sliderHandle && beforeWrapper) {
+    if (sliderHandle) {
         sliderHandle.addEventListener('input', (e) => {
             const sliderValue = e.target.value;
-            beforeWrapper.style.width = `${sliderValue}%`;
+            const clipPathValue = `inset(0 ${100 - sliderValue}% 0 0)`;
+            imageBefore.style.clipPath = clipPathValue;
+            imageBefore.style.webkitClipPath = clipPathValue;
             sliderButton.style.left = `${sliderValue}%`;
         });
     }
@@ -75,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.section-header, .accordion-item').forEach(el => {
+    document.querySelectorAll('.section-header, .accordion-item, .comparison-slider').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'all 0.6s ease-out';
@@ -84,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle scroll animations manually if needed
     window.addEventListener('scroll', () => {
-        document.querySelectorAll('.section-header, .accordion-item').forEach(el => {
+        document.querySelectorAll('.section-header, .accordion-item, .comparison-slider').forEach(el => {
             const rect = el.getBoundingClientRect();
             if (rect.top < window.innerHeight * 0.9) {
                 el.style.opacity = '1';
