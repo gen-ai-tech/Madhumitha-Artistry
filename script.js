@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.section-header, .accordion-item, .comparison-slider').forEach(el => {
+    document.querySelectorAll('.section-header, .accordion-item').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'all 0.6s ease-out';
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle scroll animations manually if needed
     window.addEventListener('scroll', () => {
-        document.querySelectorAll('.section-header, .accordion-item, .comparison-slider').forEach(el => {
+        document.querySelectorAll('.section-header, .accordion-item').forEach(el => {
             const rect = el.getBoundingClientRect();
             if (rect.top < window.innerHeight * 0.9) {
                 el.style.opacity = '1';
